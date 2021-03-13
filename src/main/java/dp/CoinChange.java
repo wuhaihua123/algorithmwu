@@ -1,5 +1,8 @@
 package dp;
 
+/**
+ * 找零钱，最少张数
+ */
 public class CoinChange {
 
     public static void main(String[] args) {
@@ -20,8 +23,8 @@ public class CoinChange {
             return dp[amount];
         }
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < coins.length; i++) {
-            int current = coinChange(coins, amount - coins[i], dp);
+        for (int coin : coins) {
+            int current = coinChange(coins, amount - coin, dp);
             if (current < min && current != -1) {
                 min = current + 1;
             }
