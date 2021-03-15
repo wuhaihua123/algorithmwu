@@ -25,7 +25,6 @@ public class FindShortestArray {
             int[] array = map.get(nums[i]);
             if (array == null) {
                 array = new int[]{1, i};
-//                map.put(nums[i], new int[]{1, i});
                 map.put(nums[i], new int[]{1, i});
             } else {
                 array[0]++;
