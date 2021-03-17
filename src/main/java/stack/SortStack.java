@@ -12,11 +12,9 @@ public class SortStack {
         stack.push(4);
         sortStackByStack(stack);
 
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
 
     }
 
