@@ -9,16 +9,9 @@ import java.util.Stack;
 public class QuickSort {
     public static void main(String[] args) {
 
-        int[] testArray = {1, 5, 6, 7, 8, 4, 5};
-//        splitNum(testArray);
-//        System.out.println(Arrays.toString(testArray));
-//
-//        splitNum2(testArray);
-//        System.out.println(Arrays.toString(testArray));
-
-//        quickSort(testArray);
-//        System.out.println(Arrays.toString(testArray));
-        quickSortWithoutRecursion(testArray);
+        int[] testArray = {9, 5, 6, 7, 8, 4, 5};
+//        quickSortWithoutRecursion(testArray);
+        quickSort(testArray);
         System.out.println(Arrays.toString(testArray));
 
 
@@ -85,13 +78,18 @@ public class QuickSort {
      * @return
      */
     public static int[] partition(int[] arr, int L, int R) {
+        //小于区
         int lessR = L - 1;
+        //大于等于区
         int moreL = R;
         int index = L;
         while (index < moreL) {
+            //以最右边的数作为比较值
             if (arr[index] < arr[R]) {
+                //如果小于，交换小于区右边的数和当前的数位置
                 swap(arr, ++lessR, index++);
             } else if (arr[index] > arr[R]) {
+                //如果大于，交换大于区的最左边和当前数位置
                 swap(arr, --moreL, index);
             } else {
                 index++;
@@ -101,6 +99,10 @@ public class QuickSort {
         return new int[]{lessR + 1, moreL};
     }
 
+    /**
+     * 快排
+     * @param arr
+     */
     public static void quickSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
