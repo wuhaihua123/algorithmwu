@@ -14,7 +14,8 @@ public class GetNearLess {
         for (int i = 0; i < s.length; i++) {
             System.out.println(Arrays.toString(s[i]));
         }
-        
+        System.out.println(s[0].length);
+
     }
 
     /**
